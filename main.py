@@ -27,11 +27,12 @@ from dataclasses import dataclass
 from typing import Dict, Tuple
 import argparse
 
-# Frecuencias por año actualizadas
+}# Frecuencias por año actualizadas
 PERIODOS: Dict[str, int] = {
     "A": 1,     # Anual
     "S": 2,     # Semestral
     "T": 4,     # Trimestral
+    "B": 6,     #Bimestral
     "Q": 24,    # Quincenal
     "M": 12,    # Mensual
     "SM": 52,   # Semanal
@@ -42,11 +43,13 @@ PERIODOS: Dict[str, int] = {
 VALIDOS = {
     # Tasas efectivas
     "EA": ("E", "A"), "ES": ("E", "S"), "ET": ("E", "T"), "EQ": ("E", "Q"),
+    "EB": ("E", "B"),
     "EM": ("E", "M"), "ESM": ("E", "SM"), "ED": ("E", "D"),
     # Tasas nominales
     "NA": ("N", "A"), "NS": ("N", "S"), "NT": ("N", "T"), "NQ": ("N", "Q"),
-    "NM": ("N", "M"), "NSM": ("N", "SM"), "ND": ("N", "D"),
+    "NM": ("N", "M"), "NSM": ("N", "SM"), "ND": ("N", "D"), "NB": ("N","B"),
 }
+
 
 @dataclass
 class Tasa:
