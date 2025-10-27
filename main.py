@@ -27,7 +27,7 @@ from dataclasses import dataclass
 from typing import Dict, Tuple
 import argparse
 
-}# Frecuencias por año actualizadas
+# Frecuencias por año actualizadas
 PERIODOS: Dict[str, int] = {
     "A": 1,     # Anual
     "S": 2,     # Semestral
@@ -189,4 +189,5 @@ def home():
 def api_convertir(data: Solicitud):
     valor = parse_tasa(data.tasa)
     resultado = convertir(valor, data.de, data.a)
+
     return {"resultado": f"{resultado * 100:.6f}%"}
